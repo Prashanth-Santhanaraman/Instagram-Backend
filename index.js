@@ -88,7 +88,7 @@ app.get("/posts/:id/comments", async (req, res) => {
 app.get("/posts/:id/likes", async (req, res) => {
   const id = req.params.id;
   const post = await Post.findById(id);
-  res.send(post.likes);
+  res.json(post.likes);
 });
 
 app.listen(3000, () => {
